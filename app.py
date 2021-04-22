@@ -1,8 +1,9 @@
 import pandas as pd
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template
 import requests
 import os
 from datetime import datetime
+
 
 app = Flask(__name__)
 
