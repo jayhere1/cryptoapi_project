@@ -27,17 +27,19 @@ def home():
     crypto_response = requests.get(url=CRYPTO_ENDPOINT, params=crypto_parameters)
     crypto_response.raise_for_status()
     crypto_data = crypto_response.json()
+    try:
+        # Converts to pandas dataframe and remove metadata
+        crypto_df = pd.DataFrame(crypto_data["Time Series (Digital Currency Daily)"], index=None)
 
-    # Converts to pandas dataframe and remove metadata
-    crypto_df = pd.DataFrame(crypto_data["Time Series (Digital Currency Daily)"], index=None)
+        # current date and time
+        now = datetime.now()
+        date = now.strftime("%Y-%m-%d")
 
-    # current date and time
-    now = datetime.now()
-    date = now.strftime("%Y-%m-%d")
-
-    # Extract data for current date
-    crypto_endpoint = (crypto_df[f"{date}"])
-    return render_template("index.html", data=crypto_endpoint, symbol=SYMBOL, name=NAME)
+        # Extract data for current date
+        crypto_endpoint = (crypto_df[f"{date}"])
+        return render_template("index.html", data=crypto_endpoint, symbol=SYMBOL, name=NAME)
+    except KeyError:
+        return render_template("error.html")
 
 
 if __name__ == '__main__':
