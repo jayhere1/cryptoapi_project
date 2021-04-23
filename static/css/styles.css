@@ -6,10 +6,11 @@
 	 color: #333;
 	 font-family: "Nunito Sans", sans-serif;
 	 background-color: #c1e3e8;
+	 padding: 50px ;
 }
  body {
 	 margin: 0;
-	 padding: 0;
+	 padding: 50px;
 	 height: 100vh;
 	 background-color: #c1e3e8;
 	 background-attachment: fixed;
@@ -17,11 +18,16 @@
 
 table {
     border-collapse: collapse;
-    border: 2px solid rgb(200, 200, 200);
     letter-spacing: 1px;
     font-family: sans-serif;
 	font-weight: bold;
     font-size: .8rem;
 	margin: 0 auto;
 	width: auto;
+  	border-style: hidden;
+}
+
+table td {
+  border: 2px solid rgb(200, 200, 200);
+	padding: 10px;
 }

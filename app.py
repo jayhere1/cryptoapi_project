@@ -1,14 +1,14 @@
 import pandas as pd
-from flask import Flask, render_template
+from flask import Flask, render_template, send_file
 import requests
 import os
 from datetime import datetime
-
 
 app = Flask(__name__)
 
 SYMBOL = "ETH"
 NAME = "Ethereum"
+MARKET = "GBP"
 
 CRYPTO_ENDPOINT = "https://www.alphavantage.co/query"
 API_KEY = os.environ.get("api_key")
@@ -16,7 +16,7 @@ API_KEY = os.environ.get("api_key")
 crypto_parameters = {
     "function": "DIGITAL_CURRENCY_DAILY",  # returns the daily historical time series for a digital currency
     "symbol": SYMBOL,
-    "market": "GBP",
+    "market": MARKET,
     "apikey": API_KEY,
     "datatype": "json",
 }
