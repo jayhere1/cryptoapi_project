@@ -1,5 +1,5 @@
 import pandas as pd
-from flask import Flask, render_template, send_file
+from flask import Flask, render_template
 import requests
 import os
 from datetime import datetime
@@ -20,6 +20,8 @@ crypto_parameters = {
     "apikey": API_KEY,
     "datatype": "json",
 }
+columns = ["Open (GBP)", "Open (USD)", "High (GBP)", "High (USD)", "Low (GBP)",
+           "Low (USD)", "Close (GBP)", "Close (USD)", "Volume", "Market cap (USD)"]
 
 
 @app.route('/')
@@ -31,6 +33,9 @@ def home():
         # Converts to pandas dataframe and remove metadata
         crypto_df = pd.DataFrame(crypto_data["Time Series (Digital Currency Daily)"], index=None)
 
+        crypto_df.index = ["Open (GBP)", "Open (USD)", "High (GBP)", "High (USD)", "Low (GBP)", "Low (USD)",
+                           "Close (GBP)", "Close (USD)", "Volume", "Market cap (USD)"]
+        print(crypto_df)
         # current date and time
         now = datetime.now()
         date = now.strftime("%Y-%m-%d")
@@ -38,6 +43,7 @@ def home():
         # Extract data for current date
         crypto_endpoint = (crypto_df[f"{date}"])
         return render_template("index.html", data=crypto_endpoint, symbol=SYMBOL, name=NAME)
+
     except KeyError:
         return render_template("error.html")
 
