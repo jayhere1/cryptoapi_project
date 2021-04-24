@@ -20,29 +20,28 @@ crypto_parameters = {
     "apikey": API_KEY,
     "datatype": "json",
 }
-columns = ["Open (GBP)", "Open (USD)", "High (GBP)", "High (USD)", "Low (GBP)",
-           "Low (USD)", "Close (GBP)", "Close (USD)", "Volume", "Market cap (USD)"]
 
 
 @app.route('/')
 def home():
-    crypto_response = requests.get(url=CRYPTO_ENDPOINT, params=crypto_parameters)
-    crypto_response.raise_for_status()
-    crypto_data = crypto_response.json()
     try:
+        crypto_response = requests.get(url=CRYPTO_ENDPOINT, params=crypto_parameters)
+        crypto_response.raise_for_status()
+        crypto_data = crypto_response.json()
         # Converts to pandas dataframe and remove metadata
         crypto_df = pd.DataFrame(crypto_data["Time Series (Digital Currency Daily)"], index=None)
 
+        # Change row names for the display
         crypto_df.index = ["Open (GBP)", "Open (USD)", "High (GBP)", "High (USD)", "Low (GBP)", "Low (USD)",
                            "Close (GBP)", "Close (USD)", "Volume", "Market cap (USD)"]
-        print(crypto_df)
+
         # current date and time
         now = datetime.now()
         date = now.strftime("%Y-%m-%d")
 
         # Extract data for current date
         crypto_endpoint = (crypto_df[f"{date}"])
-        return render_template("index.html", data=crypto_endpoint, symbol=SYMBOL, name=NAME)
+        return render_template("index.html", data=crypto_endpoint, name=NAME)
 
     except KeyError:
         return render_template("error.html")

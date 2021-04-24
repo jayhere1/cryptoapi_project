@@ -5,14 +5,14 @@
 	 font-weight: 700;
 	 color: #333;
 	 font-family: "Nunito Sans", sans-serif;
-	 background-color: #c1e3e8;
+	 background-color: #f2f5fa;
 	 padding: 50px ;
 }
  body {
 	 margin: 0;
 	 padding: 50px;
 	 height: 100vh;
-	 background-color: #c1e3e8;
+	 background-color: #f2f5fa;
 	 background-attachment: fixed;
 }
 
@@ -30,4 +30,12 @@ table {
 table td {
   border: 2px solid rgb(200, 200, 200);
 	padding: 10px;
+}
+
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
 }
