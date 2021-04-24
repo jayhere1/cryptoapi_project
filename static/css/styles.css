@@ -6,11 +6,9 @@
 	 color: #333;
 	 font-family: "Nunito Sans", sans-serif;
 	 background-color: #f2f5fa;
-	 padding: 50px ;
 }
  body {
 	 margin: 0;
-	 padding: 50px;
 	 height: 100vh;
 	 background-color: #f2f5fa;
 	 background-attachment: fixed;
@@ -26,7 +24,7 @@ table {
 	margin: 0 auto;
 	width: auto;
   	border-style: hidden;
-	padding: 10px;
+	padding: 5px;
 }
 
 table td {
@@ -44,7 +42,7 @@ table td {
 }
 
 .img-circle{
-	width: 10%;
+	width: 8%;
 	margin: 0 auto;
 	text-align:center;
 	padding: 20px;
