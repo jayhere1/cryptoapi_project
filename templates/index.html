@@ -8,7 +8,9 @@
 <body>
 <div class="container">
     <div class="text-center">
-        <h2 style="text-align:center">  {{ name }} price (24h) </h2>
+        <h2>  {{ name }} price (24h)  </h2>
+        <div> <img class="img-circle" src={{ image }}> </div>
+
         <table>
             {% for key,value in data.iteritems() %}  <!-- Iterate over dataframe to print each item separately-->
                 <tr>

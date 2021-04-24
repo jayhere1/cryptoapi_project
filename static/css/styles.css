@@ -14,6 +14,7 @@
 	 height: 100vh;
 	 background-color: #f2f5fa;
 	 background-attachment: fixed;
+	 text-align:center
 }
 
 table {
@@ -25,6 +26,7 @@ table {
 	margin: 0 auto;
 	width: auto;
   	border-style: hidden;
+	padding: 10px;
 }
 
 table td {
@@ -38,4 +40,12 @@ table td {
   margin-right: auto;
   padding-left: 10px;
   padding-right: 10px;
+	text-align:center;
+}
+
+.img-circle{
+	width: 10%;
+	margin: 0 auto;
+	text-align:center;
+	padding: 20px;
 }

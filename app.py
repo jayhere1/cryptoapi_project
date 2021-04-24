@@ -1,5 +1,5 @@
 import pandas as pd
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 import requests
 import os
 from datetime import datetime
@@ -41,7 +41,8 @@ def home():
 
         # Extract data for current date
         crypto_endpoint = (crypto_df[f"{date}"])
-        return render_template("index.html", data=crypto_endpoint, name=NAME)
+        image_file = url_for('static', filename="images/ethereum.png")
+        return render_template("index.html", data=crypto_endpoint, name=NAME, image=image_file)
 
     except KeyError:
         return render_template("error.html")
