@@ -4,4 +4,6 @@ This project uses the rapid vantage API to query data for Ethererum, converts to
 
 Resources used: Python, Flask, gunicorn, Heroku
 
-Libraries: Pandas, Requests, Flask, os.
+Libraries: Pandas, Requests, Flask.
+
+Module: os, datetime.
