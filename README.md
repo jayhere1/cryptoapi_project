@@ -10,6 +10,8 @@ This project uses the Alpha vantage API to query data for any single cryptocurre
 
 To query information about a different currency, change variables in params.ini and rerun the code.
 
+Code: app.py
+
 Resources used: Python, Flask, Jinja2, html, CSS, gunicorn, Heroku
 
 Libraries: Pandas, Requests, Flask.
