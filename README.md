@@ -1,7 +1,6 @@
 <p align="center">
-  <img width="150" src="https://user-images.githubusercontent.com/23463810/115991214-72e6d880-a5bf-11eb-8b41-cfd08aea22b4.png">
+  <img width="150" src="https://user-images.githubusercontent.com/23463810/115998709-76d72280-a5e0-11eb-9759-9b352298c1e3.png">
 </p>
-
 
 # cryptoapi_project
 
