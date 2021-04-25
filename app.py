@@ -10,7 +10,8 @@ app = Flask(__name__)
 config = ConfigParser()
 config.read('params.ini')
 
-# Get variables from params.ini file. Fallback variables provided if variables not available in params.ini file.
+# Get variables from params.ini file.
+# Fallback variables for Bitcoin provided if variables not available in params.ini file.
 SYMBOL = config.get("main", "SYMBOL", fallback="BTC")
 NAME = config.get("main", "NAME", fallback="Bitcoin")
 MARKET = config.get("main", "MARKET", fallback="GBP")
@@ -48,7 +49,7 @@ def home():
 
         # Extract data for current date
         crypto_endpoint = (crypto_df[f"{date}"])
-        image_file = url_for('static', filename="images/currency.png")
+        image_file = url_for('static', filename="images/cryptocurrency.png")
         return render_template("index.html", data=crypto_endpoint, name=NAME, image=image_file, date=date)
 
     except KeyError:

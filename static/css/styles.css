@@ -44,18 +44,31 @@ table td {
 	width: 8%;
 	margin: 0 auto;
 	text-align:center;
-	padding: 20px;
+	padding: 30px;
 }
 
 .bottom-container{
 	padding: 40px 10px 20px;
 	text-align: left;
-}
-
-.copyright{
+	position:fixed;
+    bottom:0;
 	color: black;
 	font-family: sans-serif;
 	font-size: .75rem;
-	position:fixed;
-    bottom:0;
 }
+
+a{
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gold;
+}
+/*.copyright{*/
+/*	color: black;*/
+/*	font-family: sans-serif;*/
+/*	font-size: .75rem;*/
+
+/*}*/

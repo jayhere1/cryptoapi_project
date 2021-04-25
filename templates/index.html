@@ -4,15 +4,15 @@
 
     <link rel="stylesheet" href="static/css/styles.css">
     <link rel="icon" href="static/images/favicon.ico">
+
 </head>
 
 <body>
 <div class="container">
     <div class="text-center">
-        <h2>  {{ name }} price (24h) </h2>
+        <h2>  {{ name }} price <small>(24h) </h2>
     <div> ({{ date }})</div>
-        <div> <a href="https://www.freepik.com" title="Freepik"> <img class="img-circle"  src={{ image }}> </a> </div>
-
+        <div> <a href="https://www.flaticon.com/authors/eucalyp" title="Freepik"> <img class="img-circle"  src={{ image }}> </a> </div>
         <table>
             {% for key,value in data.iteritems() %}  <!-- Iterate over dataframe to print each item separately-->
                 <tr>
@@ -24,7 +24,8 @@
     </div>
 </div>
 <div class="bottom-container">
-    <p class="copyright">© 2021 Jay Singh.</p>
+    <a class="footer-link" href="https://github.com/jayhere1">Github</a>
+    <p class="copyright">© 2021 Jay Singh</p>
   </div>
 </body>
 
