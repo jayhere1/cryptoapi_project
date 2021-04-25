@@ -56,4 +56,6 @@ table td {
 	color: black;
 	font-family: sans-serif;
 	font-size: .75rem;
+	position:fixed;
+    bottom:0;
 }
