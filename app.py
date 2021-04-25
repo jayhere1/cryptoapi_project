@@ -3,18 +3,24 @@ from flask import Flask, render_template, url_for
 import requests
 import os
 from datetime import datetime
+from configparser import ConfigParser
 
 app = Flask(__name__)
 
-SYMBOL = "ETH"
-NAME = "Ethereum"
-MARKET = "GBP"
+config = ConfigParser()
+config.read('params.ini')
+
+# Get variables from params.ini file. Fallback variables provided if variables not available in params.ini file.
+SYMBOL = config.get("main", "SYMBOL", fallback="BTC")
+NAME = config.get("main", "NAME", fallback="Bitcoin")
+MARKET = config.get("main", "MARKET", fallback="GBP")
+FUNCTION = config.get("main", "FUNCTION", fallback="DIGITAL_CURRENCY_DAILY")
 
 CRYPTO_ENDPOINT = "https://www.alphavantage.co/query"
 API_KEY = os.environ.get("api_key")
 
 crypto_parameters = {
-    "function": "DIGITAL_CURRENCY_DAILY",  # returns the daily historical time series for a digital currency
+    "function": FUNCTION,
     "symbol": SYMBOL,
     "market": MARKET,
     "apikey": API_KEY,
@@ -42,8 +48,8 @@ def home():
 
         # Extract data for current date
         crypto_endpoint = (crypto_df[f"{date}"])
-        image_file = url_for('static', filename="images/ethereum.png")
-        return render_template("index.html", data=crypto_endpoint, name=NAME, image=image_file)
+        image_file = url_for('static', filename="images/currency.png")
+        return render_template("index.html", data=crypto_endpoint, name=NAME, image=image_file, date=date)
 
     except KeyError:
         return render_template("error.html")
