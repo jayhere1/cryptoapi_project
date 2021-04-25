@@ -12,7 +12,7 @@ To query information about a different currency, change variables in params.ini 
 
 Code: app.py
 
-Resources used: Python, Flask, Jinja2, html, CSS, gunicorn, Heroku
+Resources used: Python, Flask, Jinja2, HTML, CSS, gunicorn, Heroku
 
 Libraries: Pandas, Requests, Flask.
 
