@@ -10,8 +10,8 @@
 <body>
 <div class="container">
     <div class="text-center">
-        <h2>  {{ name }} price <small>(24h) </h2>
-    <div> ({{ date }})</div>
+        <h2>  {{ name }} Price <small>(24h) </h2>
+    <div> Date: ({{ date }})</div>
         <div> <a href="https://www.flaticon.com/authors/eucalyp" title="Freepik"> <img class="img-circle"  src={{ image }}> </a> </div>
         <table>
             {% for key,value in data.iteritems() %}  <!-- Iterate over dataframe to print each item separately-->
@@ -24,7 +24,7 @@
     </div>
 </div>
 <div class="bottom-container">
-    <a class="footer-link" href="https://github.com/jayhere1">Github</a>
+    <a class="footer-link" href="https://github.com/jayhere1">Github url</a>
     <p class="copyright">© 2021 Jay Singh</p>
   </div>
 </body>

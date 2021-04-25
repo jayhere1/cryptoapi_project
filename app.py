@@ -18,7 +18,7 @@ MARKET = config.get("main", "MARKET", fallback="GBP")
 FUNCTION = config.get("main", "FUNCTION", fallback="DIGITAL_CURRENCY_DAILY")
 
 CRYPTO_ENDPOINT = "https://www.alphavantage.co/query"
-API_KEY = os.environ.get("api_key")
+API_KEY = os.environ.get("api_key")  # Accessed from environment variables
 
 crypto_parameters = {
     "function": FUNCTION,

@@ -6,7 +6,7 @@
 
 Can be accessed on https://cryptoapiproject.herokuapp.com/
 
-This project uses the Alpha vantage API to query data for any one cryptocurrency, converts to pandas dataframe, removes metadata, extracts the data for current date and displays this.
+This project uses the Alpha vantage API to query data for any single cryptocurrency, converts to pandas dataframe, removes metadata, extracts the data for current date and displays this.
 
 To query information about a different currency, change variables in params.ini and rerun the code.
 
