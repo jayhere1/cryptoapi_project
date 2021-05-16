@@ -1,1 +1,5 @@
 runtime: python38
+entrypoint: gunicorn -b :8080 main:app
+
+includes:
+  - env_variables.yaml
