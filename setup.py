@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name='cryptoapi_project',
     version='1',
-    packages=['app.py'],
+    packages=['main.py'],
     url='https://cryptoapiproject.herokuapp.com/',
     license='',
     author='Jay',
