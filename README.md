@@ -4,7 +4,7 @@
 
 # cryptoapi_project
 
-Can be accessed on https://cryptoapiproject.herokuapp.com/
+Can be accessed on https://cryptoapiproject.herokuapp.com/ or https://flask-app-crypto.nw.r.appspot.com/
 
 This project uses the Alpha vantage API to query data for any single cryptocurrency (Currently set to Ethereum), converts to pandas dataframe, removes metadata and historical data, extracts the data for current date and displays this.
 
